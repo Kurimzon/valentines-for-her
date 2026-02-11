@@ -169,14 +169,16 @@
     noBtn.addEventListener("click", () => {
       noClicks++;
 
-      scale += 0.28;
+      // Increased growth speed
+      scale += 0.45;
       yesBtn.style.transform = `scale(${scale})`;
 
       if (noClicks <= noMessages.length) {
         noBtn.textContent = noMessages[noClicks - 1];
       }
 
-      if (noClicks > 8) {
+      // Hide earlier so YES dominates faster
+      if (noClicks > 6) {
         noBtn.style.display = "none";
       }
     });
